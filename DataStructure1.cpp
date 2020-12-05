@@ -21,7 +21,22 @@ using namespace std;
 //	Data  Data  Data  Data	(Variable number of data points)
 //
 
-vector<pair<string, int>> monthDayAssociation; //This establishes how many days are in a month
+vector<pair<string, int>> monthToDay; //This establishes how many days are in a month
+
+void monthDayAssociation(){
+    monthToDay.push_back(make_pair("Jan", 31));
+    monthToDay.push_back(make_pair("Feb", 28));
+    monthToDay.push_back(make_pair("Mar", 31));
+    monthToDay.push_back(make_pair("Apr", 30));
+    monthToDay.push_back(make_pair("May", 31));
+    monthToDay.push_back(make_pair("Jun", 30));
+    monthToDay.push_back(make_pair("Jul", 31));
+    monthToDay.push_back(make_pair("Aug", 31));
+    monthToDay.push_back(make_pair("Sep", 30));
+    monthToDay.push_back(make_pair("Oct", 31));
+    monthToDay.push_back(make_pair("Nov", 30));
+    monthToDay.push_back(make_pair("Dec", 31));
+}
 
 struct quartNode {
 	int quartNumber = 0;//will be 1 2 3 or 4
@@ -38,13 +53,13 @@ struct dayNode {
 
 struct monthNode {
 	string name;
-	dayNode* children = NULL//Needs to have monthDayAssociation[pair]->second number of children
+	dayNode* children = NULL;//Needs to have monthDayAssociation[pair]->second number of children
 };
 
 
 struct stationNode {
 	string name;
-	monthNode* children = NULL //Needs to be 12 of these
+	monthNode* children = NULL; //Needs to be 12 of these
 
 };
 
